@@ -1,8 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+import os
 
-driver = webdriver.Firefox()
+chromedriver = "./chromedriver"
+os.environ["webdriver.chrome.driver"] = chromedriver
+driver = webdriver.Chrome(chromedriver)
 
 def _cp_open(url="localhost:4545/paper/new"):
 	driver.get(url)
